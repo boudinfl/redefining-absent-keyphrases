@@ -4,7 +4,9 @@ This repository contains the code for reproducing the experiments from the paper
 
  - **Redefining Absent Keyphrases and their Effect on Retrieval Effectiveness.**
    Florian Boudin, Ygor Gallina.
-   2021 Annual Conference of the North American Chapter of the Association for Computational Linguistics (NAACL-HLT), 2021.
+   Annual Conference of the North American Chapter of the Association for Computational Linguistics (NAACL-HLT), 2021.
+
+Parts of the code/data were taken from [https://github.com/boudinfl/ir-using-kg](https://github.com/boudinfl/ir-using-kg).
 
 ## Outline
 
