@@ -19,7 +19,9 @@ Parts of the code/data were taken from [https://github.com/boudinfl/ir-using-kg]
 ├── data
     ├── ntcir-2
         ├── docs
-            ├── 
+            ├── ntc1.e1.gz  // NTCIR-1 (#187,080) collection converted with ACCN-e.pl 
+            ├── ntc2-e1g.gz // NTCIR-2 (#77,433) NACSIS Academic Conference Papers Database
+            ├── ntc2-e1k.gz // NTCIR-2 (#57,545) NACSIS Grant-in-Aid Scientific Research Database
         ├── qrels
             ├── rel1_ntc2-e2_0101-0149 // judgments for relevant documents 
         ├── topics
