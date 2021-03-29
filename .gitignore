@@ -1,4 +1,6 @@
 
 .DS_Store
-data/indexes/
 anserini/
+data/ntcir-2/collections/
+data/ntcir-2/indexes/
+

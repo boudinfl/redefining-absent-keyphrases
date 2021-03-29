@@ -12,6 +12,9 @@ Parts of the code/data were taken from [https://github.com/boudinfl/ir-using-kg]
 
 * [Data](#data)
 * [Installing anserini](#installing-anserini)
+* [Replication Guides](#replication-guides)
+  * [NTCIR-2](#ntcir-2)
+  * [ACM-CR-30](#acm-cr-30)
 
 ## Data
 
@@ -23,10 +26,10 @@ Parts of the code/data were taken from [https://github.com/boudinfl/ir-using-kg]
             ├── ntc2-e1g.gz // NTCIR-2 (#77,433) NACSIS Academic Conference Papers Database
             ├── ntc2-e1k.gz // NTCIR-2 (#57,545) NACSIS Grant-in-Aid Scientific Research Database
         ├── qrels
-            ├── rel1_ntc2-e2_0101-0149 // judgments for relevant documents 
+            ├── rel1_ntc2-e2_0101-0149.qrels // judgments for relevant documents 
         ├── topics
             ├── topic-e0101-0149.title+desc+narr.trec // English topics for NTCIR-2
-    ├── acm-ir-30
+    ├── acm-cr-30
         ├── docs
             ├── 
         ├── qrels
@@ -59,3 +62,21 @@ mvn clean package appassembler:assemble
 cd tools/eval && tar xvfz trec_eval.9.0.4.tar.gz && cd trec_eval.9.0.4 && make && cd ../../..
 cd tools/eval/ndeval && make && cd ../../..
 ```
+
+## Replication Guides
+
+### NTCIR-2
+
+```
+sh src/experiments-ntcir-2.sh
+
+-> %P:50.9 %R:6.2 %M:31.6 %U:11.4 %uw:22.7
+```
+
+
+
+
+### ACM-CR-30
+
+
+
