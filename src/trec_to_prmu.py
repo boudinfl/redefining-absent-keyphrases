@@ -149,102 +149,102 @@ with gzip.open(args.input, 'rt') as f:
             print("parse error at line {}".format(str(i)))
             exit(0)
 
-# # write the output collections
-# output_filename = args.input.split('/')[-1].replace("all.gz", '')
+# write the output collections
+output_filename = args.input.split('/')[-1].replace("all.gz", '')
 
-# # P // creating output path if it does not exist
-# output_file = args.output+'/'+output_filename+'p/'+output_filename+'p.gz'
-# if not os.path.isdir(args.output+'/'+output_filename+'p/'):
-#     os.makedirs(args.output+'/'+output_filename+'p/', exist_ok=True)
+# P // creating output path if it does not exist
+output_file = args.output+'/'+output_filename+'p/'+output_filename+'p.gz'
+if not os.path.isdir(args.output+'/'+output_filename+'p/'):
+    os.makedirs(args.output+'/'+output_filename+'p/', exist_ok=True)
 
-# with gzip.open(output_file, 'wt') as o:
-#     for doc_id in collection:
-#         o.write("<DOC>\n")
-#         o.write("\n".join(collection[doc_id])+"\n")
-#         if len(present[doc_id]):
-#             o.write("<HEAD>{}</HEAD>\n".format(" // ".join([all_keyphrases[doc_id][j] for j in present[doc_id]])))
-#         o.write("</DOC>\n\n")
+with gzip.open(output_file, 'wt') as o:
+    for doc_id in collection:
+        o.write("<DOC>\n")
+        o.write("\n".join(collection[doc_id])+"\n")
+        if len(present[doc_id]):
+            o.write("<HEAD>{}</HEAD>\n".format(" // ".join([all_keyphrases[doc_id][j] for j in present[doc_id]])))
+        o.write("</DOC>\n\n")
 
-# # R // creating output path if it does not exist
-# output_file = args.output+'/'+output_filename+'r/'+output_filename+'r.gz'
-# if not os.path.isdir(args.output+'/'+output_filename+'r/'):
-#     os.makedirs(args.output+'/'+output_filename+'r/', exist_ok=True)
+# R // creating output path if it does not exist
+output_file = args.output+'/'+output_filename+'r/'+output_filename+'r.gz'
+if not os.path.isdir(args.output+'/'+output_filename+'r/'):
+    os.makedirs(args.output+'/'+output_filename+'r/', exist_ok=True)
 
-# with gzip.open(output_file, 'wt') as o:
-#     for doc_id in collection:
-#         o.write("<DOC>\n")
-#         o.write("\n".join(collection[doc_id])+"\n")
-#         if len(reordered[doc_id]):
-#             o.write("<HEAD>{}</HEAD>\n".format(" // ".join([all_keyphrases[doc_id][j] for j in reordered[doc_id]])))
-#         o.write("</DOC>\n\n")
+with gzip.open(output_file, 'wt') as o:
+    for doc_id in collection:
+        o.write("<DOC>\n")
+        o.write("\n".join(collection[doc_id])+"\n")
+        if len(reordered[doc_id]):
+            o.write("<HEAD>{}</HEAD>\n".format(" // ".join([all_keyphrases[doc_id][j] for j in reordered[doc_id]])))
+        o.write("</DOC>\n\n")
 
-# # M // creating output path if it does not exist
-# output_file = args.output+'/'+output_filename+'m/'+output_filename+'m.gz'
-# if not os.path.isdir(args.output+'/'+output_filename+'m/'):
-#     os.makedirs(args.output+'/'+output_filename+'m/', exist_ok=True)
+# M // creating output path if it does not exist
+output_file = args.output+'/'+output_filename+'m/'+output_filename+'m.gz'
+if not os.path.isdir(args.output+'/'+output_filename+'m/'):
+    os.makedirs(args.output+'/'+output_filename+'m/', exist_ok=True)
 
-# with gzip.open(output_file, 'wt') as o:
-#     for doc_id in collection:
-#         o.write("<DOC>\n")
-#         o.write("\n".join(collection[doc_id])+"\n")
-#         if len(mixed[doc_id]):
-#             o.write("<HEAD>{}</HEAD>\n".format(" // ".join([all_keyphrases[doc_id][j] for j in mixed[doc_id]])))
-#         o.write("</DOC>\n\n")
+with gzip.open(output_file, 'wt') as o:
+    for doc_id in collection:
+        o.write("<DOC>\n")
+        o.write("\n".join(collection[doc_id])+"\n")
+        if len(mixed[doc_id]):
+            o.write("<HEAD>{}</HEAD>\n".format(" // ".join([all_keyphrases[doc_id][j] for j in mixed[doc_id]])))
+        o.write("</DOC>\n\n")
 
-# # u // creating output path if it does not exist
-# output_file = args.output+'/'+output_filename+'u/'+output_filename+'u.gz'
-# if not os.path.isdir(args.output+'/'+output_filename+'u/'):
-#     os.makedirs(args.output+'/'+output_filename+'u/', exist_ok=True)
+# u // creating output path if it does not exist
+output_file = args.output+'/'+output_filename+'u/'+output_filename+'u.gz'
+if not os.path.isdir(args.output+'/'+output_filename+'u/'):
+    os.makedirs(args.output+'/'+output_filename+'u/', exist_ok=True)
 
-# with gzip.open(output_file, 'wt') as o:
-#     for doc_id in collection:
-#         o.write("<DOC>\n")
-#         o.write("\n".join(collection[doc_id])+"\n")
-#         if len(unseen[doc_id]):
-#             o.write("<HEAD>{}</HEAD>\n".format(" // ".join([all_keyphrases[doc_id][j] for j in unseen[doc_id]])))
-#         o.write("</DOC>\n\n")
+with gzip.open(output_file, 'wt') as o:
+    for doc_id in collection:
+        o.write("<DOC>\n")
+        o.write("\n".join(collection[doc_id])+"\n")
+        if len(unseen[doc_id]):
+            o.write("<HEAD>{}</HEAD>\n".format(" // ".join([all_keyphrases[doc_id][j] for j in unseen[doc_id]])))
+        o.write("</DOC>\n\n")
 
-# # absent RMU // creating output path if it does not exist
-# output_file = args.output+'/'+output_filename+'rmu/'+output_filename+'rmu.gz'
-# if not os.path.isdir(args.output+'/'+output_filename+'rmu/'):
-#     os.makedirs(args.output+'/'+output_filename+'rmu/', exist_ok=True)
+# absent RMU // creating output path if it does not exist
+output_file = args.output+'/'+output_filename+'rmu/'+output_filename+'rmu.gz'
+if not os.path.isdir(args.output+'/'+output_filename+'rmu/'):
+    os.makedirs(args.output+'/'+output_filename+'rmu/', exist_ok=True)
 
-# with gzip.open(output_file, 'wt') as o:
-#     for doc_id in collection:
-#         o.write("<DOC>\n")
-#         o.write("\n".join(collection[doc_id])+"\n")
-#         rmu = flatten_list([reordered[doc_id], mixed[doc_id], unseen[doc_id]])
-#         if len(rmu):
-#             o.write("<HEAD>{}</HEAD>\n".format(" // ".join([all_keyphrases[doc_id][j] for j in rmu])))
-#         o.write("</DOC>\n\n")
+with gzip.open(output_file, 'wt') as o:
+    for doc_id in collection:
+        o.write("<DOC>\n")
+        o.write("\n".join(collection[doc_id])+"\n")
+        rmu = flatten_list([reordered[doc_id], mixed[doc_id], unseen[doc_id]])
+        if len(rmu):
+            o.write("<HEAD>{}</HEAD>\n".format(" // ".join([all_keyphrases[doc_id][j] for j in rmu])))
+        o.write("</DOC>\n\n")
 
-# # highlight PR // creating output path if it does not exist
-# output_file = args.output+'/'+output_filename+'pr/'+output_filename+'pr.gz'
-# if not os.path.isdir(args.output+'/'+output_filename+'pr/'):
-#     os.makedirs(args.output+'/'+output_filename+'pr/', exist_ok=True)
+# highlight PR // creating output path if it does not exist
+output_file = args.output+'/'+output_filename+'pr/'+output_filename+'pr.gz'
+if not os.path.isdir(args.output+'/'+output_filename+'pr/'):
+    os.makedirs(args.output+'/'+output_filename+'pr/', exist_ok=True)
 
-# with gzip.open(output_file, 'wt') as o:
-#     for doc_id in collection:
-#         o.write("<DOC>\n")
-#         o.write("\n".join(collection[doc_id])+"\n")
-#         pr = flatten_list([present[doc_id], reordered[doc_id]])
-#         if len(pr):
-#             o.write("<HEAD>{}</HEAD>\n".format(" // ".join([all_keyphrases[doc_id][j] for j in pr])))
-#         o.write("</DOC>\n\n")
+with gzip.open(output_file, 'wt') as o:
+    for doc_id in collection:
+        o.write("<DOC>\n")
+        o.write("\n".join(collection[doc_id])+"\n")
+        pr = flatten_list([present[doc_id], reordered[doc_id]])
+        if len(pr):
+            o.write("<HEAD>{}</HEAD>\n".format(" // ".join([all_keyphrases[doc_id][j] for j in pr])))
+        o.write("</DOC>\n\n")
 
-# # Expand MU // creating output path if it does not exist
-# output_file = args.output+'/'+output_filename+'mu/'+output_filename+'mu.gz'
-# if not os.path.isdir(args.output+'/'+output_filename+'mu/'):
-#     os.makedirs(args.output+'/'+output_filename+'mu/', exist_ok=True)
+# Expand MU // creating output path if it does not exist
+output_file = args.output+'/'+output_filename+'mu/'+output_filename+'mu.gz'
+if not os.path.isdir(args.output+'/'+output_filename+'mu/'):
+    os.makedirs(args.output+'/'+output_filename+'mu/', exist_ok=True)
 
-# with gzip.open(output_file, 'wt') as o:
-#     for doc_id in collection:
-#         o.write("<DOC>\n")
-#         o.write("\n".join(collection[doc_id])+"\n")
-#         mu = flatten_list([mixed[doc_id], unseen[doc_id]])
-#         if len(mu):
-#             o.write("<HEAD>{}</HEAD>\n".format(" // ".join([all_keyphrases[doc_id][j] for j in mu])))
-#         o.write("</DOC>\n\n")
+with gzip.open(output_file, 'wt') as o:
+    for doc_id in collection:
+        o.write("<DOC>\n")
+        o.write("\n".join(collection[doc_id])+"\n")
+        mu = flatten_list([mixed[doc_id], unseen[doc_id]])
+        if len(mu):
+            o.write("<HEAD>{}</HEAD>\n".format(" // ".join([all_keyphrases[doc_id][j] for j in mu])))
+        o.write("</DOC>\n\n")
 
 # Compute some statistics
 p, r, m, u = [], [], [], []

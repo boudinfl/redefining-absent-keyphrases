@@ -87,8 +87,18 @@ for filename in glob.iglob(args.input+"/**", recursive=True):
                     # keywords
                     elif args.include_keywords and line.startswith('<KYWE'):
                         keywords = BeautifulSoup(line.strip(), 'html.parser').text
+                        keywords = [kp.strip() for kp in keywords.split('//')]
+                        # special case of " , " separator
+                        if len(keywords) < 2:
+                            if "," in keywords[0]:
+                                keywords = keywords[0].split(",")
+                            if ' / ' in keywords[0]:
+                                keywords = keywords[0].split(" / ")
+                            if ' ; ' in keywords[0]:
+                                keywords = keywords[0].split(" ; ")
+
                         # keywords = re.sub('\s+', " ", keywords.replace("//", " "))
-                        o.write(tag('HEAD', keywords))
+                        o.write(tag('HEAD', ' // '.join(keywords)))
 
                     elif line.startswith('</REC>'):
                         if not is_in_document:

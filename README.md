@@ -70,7 +70,27 @@ cd tools/eval/ndeval && make && cd ../../..
 ```
 sh src/experiments-ntcir-2.sh
 
--> %P:50.9 %R:6.2 %M:31.6 %U:11.4 %uw:22.7
+%P:61.9 %R:8.1 %M:16.5 %U:13.5 %uw:21.4
+
+ntcir-2-t+a.bm25  all: 0.2955 (sign@.05: False, pvalue: nan)
+ntcir-2-t+a-p.bm25  all: 0.3074 (sign@.05: True, pvalue: 0.0018)
+ntcir-2-t+a-r.bm25  all: 0.2979 (sign@.05: False, pvalue: 0.3931)
+ntcir-2-t+a-m.bm25  all: 0.3080 (sign@.05: True, pvalue: 0.0071)
+ntcir-2-t+a-u.bm25  all: 0.2967 (sign@.05: False, pvalue: 0.7024)
+ntcir-2-t+a-rmu.bm25  all: 0.3077 (sign@.05: True, pvalue: 0.0398)
+ntcir-2-t+a-pr.bm25  all: 0.3064 (sign@.05: True, pvalue: 0.0077)
+ntcir-2-t+a-mu.bm25  all: 0.3083 (sign@.05: True, pvalue: 0.0161)
+ntcir-2-t+a-all.bm25  all: 0.3192 (sign@.05: True, pvalue: 0.0002)
+
+ntcir-2-t+a.bm25+rm3  all: 0.3283 (sign@.05: False, pvalue: nan)
+ntcir-2-t+a-p.bm25+rm3  all: 0.3347 (sign@.05: False, pvalue: 0.1840)
+ntcir-2-t+a-r.bm25+rm3  all: 0.3348 (sign@.05: False, pvalue: 0.1596)
+ntcir-2-t+a-m.bm25+rm3  all: 0.3385 (sign@.05: False, pvalue: 0.1498)
+ntcir-2-t+a-u.bm25+rm3  all: 0.3394 (sign@.05: False, pvalue: 0.0587)
+ntcir-2-t+a-rmu.bm25+rm3  all: 0.3487 (sign@.05: True, pvalue: 0.0217)
+ntcir-2-t+a-pr.bm25+rm3  all: 0.3382 (sign@.05: False, pvalue: 0.1244)
+ntcir-2-t+a-mu.bm25+rm3  all: 0.3434 (sign@.05: False, pvalue: 0.0754)
+ntcir-2-t+a-all.bm25+rm3  all: 0.3548 (sign@.05: True, pvalue: 0.0082)
 ```
 
 
