@@ -6,7 +6,8 @@ This repository contains the code for reproducing the experiments from the paper
    Florian Boudin, Ygor Gallina.
    Annual Conference of the North American Chapter of the Association for Computational Linguistics (NAACL-HLT), 2021.
 
-Parts of the code/data were taken from [https://github.com/boudinfl/ir-using-kg](https://github.com/boudinfl/ir-using-kg).
+The **ACM-CR-30 test collection** introduced as new benchmark dataset for scientific document retrieval through the task of 
+context-aware citation recommendation is available as direct download [here](data/acm-cr/acm-cr.v1.tar.gz).
 
 ## Outline
 
